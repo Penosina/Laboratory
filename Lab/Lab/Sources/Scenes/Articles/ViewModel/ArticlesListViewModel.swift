@@ -22,11 +22,8 @@ final class ArticlesListViewModel {
 		getArticles(needRefresh: true)
 	}
 
-	func loadMoreArticles() {
-		getArticles()
-	}
-
 	func refresh() {
+		dependencies.coreDaraService.deleteAllData()
 		getArticles(needRefresh: true)
 	}
 
@@ -54,7 +51,7 @@ final class ArticlesListViewModel {
 			pageNum = 1
 		}
 
-		dependencies.networkManager.getNews(pageNum: pageNum) { [weak self] result in
+		dependencies.networkManager.getArticles(pageNum: pageNum) { [weak self] result in
 			guard let self = self else { return }
 
 			switch result {

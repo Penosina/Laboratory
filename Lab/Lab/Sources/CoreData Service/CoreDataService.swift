@@ -26,11 +26,6 @@ final class CoreDataService {
 		}
 	}
 
-	func addOrUpdateArticle(article: Article) {
-		ArticleDataModel.from(transient: article, inContext: viewContext)
-		try? viewContext.save()
-	}
-
 	func getArticles() -> [Article] {
 		var articles: [Article] = []
 
@@ -42,13 +37,6 @@ final class CoreDataService {
 		}
 
 		return articles
-	}
-
-	func deleteArticle(article: Article) {
-		let dbArticle = ArticleDataModel.from(transient: article, inContext: viewContext)
-		viewContext.delete(dbArticle)
-
-		try? viewContext.save()
 	}
 
 	func deleteAllData() {
@@ -66,5 +54,10 @@ final class CoreDataService {
 		persistentContainer.loadPersistentStores { _, error in
 			print(String(describing: error))
 		}
+	}
+
+	private func addOrUpdateArticle(article: Article) {
+		ArticleDataModel.from(transient: article, inContext: viewContext)
+		try? viewContext.save()
 	}
 }

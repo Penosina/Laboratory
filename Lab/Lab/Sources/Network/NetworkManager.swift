@@ -11,7 +11,7 @@ final class NetworkManager {
 
 	private var isLoading = false
 
-	func getNews(pageNum: Int = 1, completion: @escaping (Result<[Article], Error>) -> Void) {
+	func getArticles(pageNum: Int = 1, completion: @escaping (Result<[Article], Error>) -> Void) {
 
 		guard let url = URL(string: URLFactory.makeGetNewsURLString(pageNum: pageNum)) else { return }
 
