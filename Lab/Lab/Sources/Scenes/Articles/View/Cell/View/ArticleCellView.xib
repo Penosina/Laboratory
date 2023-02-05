@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="ArticleCellView" customModule="Lab" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="381" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="381" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOz-B1-0ky">
+                        <rect key="frame" x="72" y="8" width="293" height="24"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AMv-wj-3dr">
+                        <rect key="frame" x="16" y="8.5" width="48" height="47"/>
+                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="DDa-5d-UJm"/>
+                            <constraint firstAttribute="width" constant="48" id="zIs-NT-8Hb"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnn-bv-RcF">
+                        <rect key="frame" x="331" y="40" width="34" height="21"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="iOz-B1-0ky" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="OQm-E3-gIc"/>
+                    <constraint firstItem="Gnn-bv-RcF" firstAttribute="top" secondItem="iOz-B1-0ky" secondAttribute="bottom" constant="8" id="YtY-3Q-RQU"/>
+                    <constraint firstItem="AMv-wj-3dr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="a7V-fC-UOb"/>
+                    <constraint firstItem="AMv-wj-3dr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="cDP-E0-ghG"/>
+                    <constraint firstAttribute="bottom" secondItem="Gnn-bv-RcF" secondAttribute="bottom" constant="8" id="eOh-cd-nxD"/>
+                    <constraint firstItem="iOz-B1-0ky" firstAttribute="leading" secondItem="AMv-wj-3dr" secondAttribute="trailing" constant="8" id="efH-WU-dQg"/>
+                    <constraint firstAttribute="trailing" secondItem="iOz-B1-0ky" secondAttribute="trailing" constant="16" id="gtb-1l-uSU"/>
+                    <constraint firstAttribute="trailing" secondItem="Gnn-bv-RcF" secondAttribute="trailing" constant="16" id="mh0-lS-2ye"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="articleImageView" destination="AMv-wj-3dr" id="Br1-cO-2F5"/>
+                <outlet property="counterLabel" destination="Gnn-bv-RcF" id="Ls6-9r-RHw"/>
+                <outlet property="titleLabel" destination="iOz-B1-0ky" id="Eqh-h3-DVw"/>
+            </connections>
+            <point key="canvasLocation" x="268.84057971014494" y="19.419642857142858"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="paperplane.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
